@@ -16,9 +16,16 @@ The function should:
 */
 // pass 3 parameters - name, price, category
 // return an object with those 3 parameters//
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
-}
+function createMenuItem(name, price, category){
+   const items = {
+      name: 'taco',
+      price: 8,
+      category: 'lunch',
+    }
+    return items
+    }
+    
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -30,8 +37,9 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 // invoke the function from 1a 3 times//
-
-
+console.log(createMenuItem('Caffe latte', 5, 'breakfast' ));
+console.log(createMenuItem('Hot dog', 5, 'lunch' ));
+console.log(createMenuItem('pizza', 5, 'dinner' ));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
 burger object below that automatically calculates price depending on the a string received as a parameter. 
@@ -49,9 +57,17 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
+  discount: function(string){
+    if(string === 'teacher' || string === 'student'){
+      return this.price*.75; 
+    }else{
+      return this.price*.9;
+    }
+  }
   
 }
-
+console.log(burger.discount('teacher'));
+console.log(burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -96,7 +112,7 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 // pass array, name, rating, and feedback as parameters. push the object to the end of the array and return resulting array//
-function addReview(/*Your Code Here */){
+function addReview(array, name, rating, feedback) {
   /*Your Code Here */
 }
 
@@ -111,7 +127,7 @@ Use the getReviewByIndex function below to do the following:
 */
 // array, index, and return the string(match exactly//
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(array, index) {
   /*Your code here*/
 }
 
